@@ -1,7 +1,6 @@
 import streamlit as st
 import base64
 import os
-import config
 from streamlit_chat import message
 from streamlit_javascript import st_javascript
 from langchain.callbacks import get_openai_callback # Check number of token use per request
@@ -44,7 +43,7 @@ def on_btn_click():
 
 if __name__ == '__main__':
     with st.sidebar:
-        st.title("Pdf Q&A")
+        st.title("Pdf Q&A with RAG")
 
     #Check if there is a given key in the .env file
     load_dotenv()
@@ -58,7 +57,7 @@ if __name__ == '__main__':
                 st.write("Please insert a valid key")
     else:
         with st.sidebar:
-            OPENAI_API_KEY = st.text_input("OPENAI API KEY1")
+            OPENAI_API_KEY = st.text_input("OPENAI API KEY",type="password")
 
 
     with st.sidebar:
@@ -66,7 +65,7 @@ if __name__ == '__main__':
         #Check if given key is valid
         try:
             if not check_openai_api_key(OPENAI_API_KEY):
-                OPENAI_API_KEY = st.text_input("OPENAI API KEY2")
+                OPENAI_API_KEY = st.text_input("OPENAI API KEY",type="password")
                 
             else : 
                 st.write("Valid key")
@@ -99,7 +98,7 @@ if __name__ == '__main__':
 
         #Chatbox
         with side1:
-            st.button("Clear message", on_click=on_btn_click)
+            st.button("Clear history", on_click=on_btn_click)
             with st.container():
                 
                 query = st.text_input("Say something",placeholder="Can you give me a short summary?",
@@ -148,62 +147,6 @@ if __name__ == '__main__':
             st.subheader("Tokens and cost tracking",divider="rainbow")
             st.write("Total tokens used : ",sum(st.session_state.tokens))
             st.write(f'Cost : {sum(st.session_state.cost)} $')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
