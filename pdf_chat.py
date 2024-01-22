@@ -129,7 +129,7 @@ if __name__ == '__main__':
                             message(
                             st.session_state["past"][i],
                             is_user=True,
-                            avatar_style="initials",
+                            
                             seed="A",
                             key=str(i) + "_user",
                             )
@@ -137,7 +137,7 @@ if __name__ == '__main__':
                             st.write("Prompt tokens : ",cb.prompt_tokens," | ","Completions tokens : ",cb.completion_tokens)
                             message(
                                 st.session_state["generated"][i],
-                                avatar_style="initials",
+                                
                                 seed="B",
                                 key=str(i),
                             )

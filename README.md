@@ -34,4 +34,3 @@ Use a ChatModel to retrieve relevant informations from a PDF file
 - Add prompt template for better/accurate results.
 - Highlight relevant informations inside the Pdf.
 - Selection of vector database such as Chroma, FAISS, Pgvector.
-
