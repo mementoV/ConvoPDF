@@ -10,6 +10,8 @@ from dotenv import load_dotenv
 import requests
 
 def check_openai_api_key(api_key):
+    if api_key =='':
+        return False
     client = openai.OpenAI(api_key=api_key)
     try:
         client.models.list()
@@ -45,7 +47,8 @@ if __name__ == '__main__':
     with st.sidebar:
         st.title("Pdf Q&A with RAG")
 
-    #Check if there is a given key in the .env file
+    #Check if there is a given key in the .env file and if it's a valid one
+    
     load_dotenv()
     get_key = os.getenv('OPENAI_API_KEY')
     
@@ -70,7 +73,9 @@ if __name__ == '__main__':
             else : 
                 st.write("Valid key")
         except:
-            pass     
+            with st.sidebar:
+                st.write("Please insert a valid key")
+
         uploaded_file = st.file_uploader("Upload file",type=["pdf"],help="Only PDF file are supported")
 
     #Create 2 collumns for chat, pdf visualisation
@@ -103,7 +108,7 @@ if __name__ == '__main__':
                 
                 query = st.text_input("Say something",placeholder="Can you give me a short summary?",
                                     disabled= not uploaded_file,on_change=clear_submit) 
-                 
+                
                 chat_history = [(st.session_state["past"][i], st.session_state["generated"][i])
                                 for i in range(len(st.session_state['generated']))]
 
