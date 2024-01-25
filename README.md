@@ -1,4 +1,4 @@
-# Pdf-Q&A with RAG
+# ConvoPDF with RAG
 
 ## Project Description: 
 The objective is to create a PDF retrieval system utilizing LangChain, a robust language processing tool, to extract data from PDF documents. Harnessing LangChain's advanced natural language understanding, the system empowers users to execute intricate searches, capturing precise data points from PDF files with efficiency and accuracy. 
@@ -11,7 +11,11 @@ git clone https://github.com/mementoV/pdf_chatting
 cd pdf_chatting
 pip install -r requirements.txt
 ```
+
 ### Running
+```bash
+streamlit run interactive_data_inquiry
+```
 
 1. Insert your OpenAI API key and upload a PDF file.
     - First method.

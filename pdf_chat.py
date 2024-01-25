@@ -45,7 +45,7 @@ def on_btn_click():
 
 if __name__ == '__main__':
     with st.sidebar:
-        st.title("Pdf Q&A with RAG")
+        st.title("ConvoPDF")
 
     #Check if there is a given key in the .env file and if it's a valid one
     
