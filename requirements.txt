@@ -1,0 +1,11 @@
+sentence-transformers
+langchain
+langchain-community
+langchain-openai
+langchain-experimental
+streamlit
+streamlit-chat
+streamlit-javascript
+python-dotenv
+requests
+pypdf

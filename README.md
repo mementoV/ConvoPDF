@@ -5,6 +5,13 @@ The objective is to create a PDF retrieval system utilizing LangChain, a robust 
 Additionally, the system meticulously tracks the number of tokens used and calculates the total cost, ensuring transparency and accountability in resource utilization.
 
 Use a ChatModel to retrieve relevant informations from a PDF file
+### Installation
+```bash
+git clone https://github.com/mementoV/pdf_chatting
+cd pdf_chatting
+pip install -r requirements.txt
+```
+### Running
 
 1. Insert your OpenAI API key and upload a PDF file.
     - First method.
@@ -31,6 +38,6 @@ Use a ChatModel to retrieve relevant informations from a PDF file
     
 ## To Do's
 
-- Add prompt template for better/accurate results.
+- Add a prompt template for better and more accurate results, and to avoid errors resulting from a lack of context.
 - Highlight relevant informations inside the Pdf.
 - Selection of vector database such as Chroma, FAISS, Pgvector.

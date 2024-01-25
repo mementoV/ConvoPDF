@@ -14,7 +14,7 @@ from pypdf import PdfReader
 import re
 from langchain.docstore.document import Document
 import streamlit as st
-from langchain.vectorstores import FAISS
+#from langchain.vectorstores import FAISS
 
 
 @st.cache_resource
