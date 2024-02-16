@@ -42,6 +42,7 @@ streamlit run convoPDF
     
 ## To Do's
 
+- Make it usable for bigger database.
 - Add a prompt template for better and more accurate results, and to avoid errors resulting from a lack of context.
 - Highlight relevant informations inside the Pdf.
 - Selection of vector database such as Chroma, FAISS, Pgvector.
